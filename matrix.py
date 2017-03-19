@@ -21,7 +21,7 @@ def make_hermite():
 
 #t = type
 def generate_curve_coefs( p1, p2, p3, p4, t ):
-    p = [ [p1], [p2], [p3], [p4] ]
+    p = [ [p1, p2, p3, p4] ]
 
     if t == "hermite":
         m = make_hermite()
