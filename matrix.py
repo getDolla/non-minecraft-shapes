@@ -27,6 +27,8 @@ def generate_curve_coefs( p1, p2, p3, p4, t ):
         m = make_bezier()
         matrix_mult(m, p)
 
+    return p
+
 def make_translate( x, y, z ):
     t = new_matrix()
     ident(t)
