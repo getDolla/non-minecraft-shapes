@@ -6,13 +6,17 @@ def make_bezier():
     m.append([3, -6, 3, 0])
     m.append([-3, 3, 0, 0])
     m.append([1, 0, 0, 0])
+
+    print_matrix(m)
     return m
 
 def make_hermite():
-    m = [[2, -2, 1, 1]]
-    m.append([-3, 3, -2, 1])
-    m.append([0, 0, 1, 0])
-    m.append([1, 0, 0, 0])
+    m = [[2, -3, 0, 1]]
+    m.append([-2, 3, 0, 0])
+    m.append([1, -2, 1, 0])
+    m.append([1, 1, 0, 0])
+
+    print_matrix(m)
     return m
 
 #t = type
@@ -23,7 +27,7 @@ def generate_curve_coefs( p1, p2, p3, p4, t ):
         m = make_hermite()
         matrix_mult(m, p)
 
-    else if t == "bezier":
+    elif t == "bezier":
         m = make_bezier()
         matrix_mult(m, p)
 
