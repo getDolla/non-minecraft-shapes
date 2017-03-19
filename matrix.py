@@ -7,16 +7,16 @@ def make_bezier():
     m.append([-3, 3, 0, 0])
     m.append([1, 0, 0, 0])
 
-    print_matrix(m)
+    #print_matrix(m)
     return m
 
 def make_hermite():
     m = [[2, -3, 0, 1]]
     m.append([-2, 3, 0, 0])
     m.append([1, -2, 1, 0])
-    m.append([1, 1, 0, 0])
+    m.append([1, -1, 0, 0])
 
-    print_matrix(m)
+    #print_matrix(m)
     return m
 
 #t = type

@@ -18,16 +18,16 @@ def add_circle( points, cx, cy, cz, r, step ):
         t += step
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    coef_x = generate_curve_coefs( x0, x1, x2, x3, curve_type )
-    coef_y = generate_curve_coefs( y0, y1, y2, y3, curve_type )
+    coef_x = generate_curve_coefs( x0, x1, x2, x3, curve_type )[0]
+    coef_y = generate_curve_coefs( y0, y1, y2, y3, curve_type )[0]
 
-    x_0 = coef_x[0][3]
-    y_0 = coef_y[0][3]
+    x_0 = coef_x[3]
+    y_0 = coef_y[3]
 
     t = step
     while t <= 1.0001:
-        x_1 = coef_x[0][0] * t ** 3 + coef_x[0][1] * t ** 2 + coef_x[0][2] * t + coef_x[0][3]
-        y_1 = coef_y[0][0] * t ** 3 + coef_y[0][1] * t ** 2 + coef_y[0][2] * t + coef_y[0][3]
+        x_1 = coef_x[0] * t ** 3 + coef_x[1] * t ** 2 + coef_x[2] * t + coef_x[3]
+        y_1 = coef_y[0] * t ** 3 + coef_y[1] * t ** 2 + coef_y[2] * t + coef_y[3]
 
         add_edge(points, x_0, y_0, 0, x_1, y_1, 0)
 
